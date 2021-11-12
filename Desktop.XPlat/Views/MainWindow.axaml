@@ -33,8 +33,8 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Margin="0,0,15,0">
-                    <TextBlock Classes="SectionHeader">Share Screen</TextBlock>
-                    <TextBlock FontSize="16" Margin="0,10,0,5">Your Session ID:</TextBlock>
+                    <TextBlock Classes="SectionHeader">Logados</TextBlock>
+                    <TextBlock FontSize="16" Margin="0,10,0,5">Seu Acesso:</TextBlock>
                     <TextBox Name="SessionIDTextBox" FontSize="16" Text="{Binding StatusMessage}" IsReadOnly="True"/>
                     <Grid Margin="0,10,0,0">
                         <TextBlock VerticalAlignment="Center">
@@ -44,13 +44,13 @@
                             Copy
                         </Button>
                     </Grid>
-                    <TextBlock Margin="0,10,0,0" Foreground="DodgerBlue" IsVisible="{Binding IsCopyMessageVisible}" Opacity="{Binding CopyMessageOpacity}" HorizontalAlignment="Right">Copied to clipboard!</TextBlock>
+                    <TextBlock Margin="0,10,0,0" Foreground="DodgerBlue" IsVisible="{Binding IsCopyMessageVisible}" Opacity="{Binding CopyMessageOpacity}" HorizontalAlignment="Right">Copiado para Area de Trasferência!</TextBlock>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Margin="15,0,0,0">
                     <TextBlock Classes="SectionHeader">Viewers</TextBlock>
                     <Grid  Margin="0,5,0,0">
                         <TextBlock FontSize="8" Margin="5,0,0,0">Name</TextBlock>
-                        <TextBlock FontSize="8" Margin="0,0,5,0" HorizontalAlignment="Right">Has Control</TextBlock>
+                        <TextBlock FontSize="8" Margin="0,0,5,0" HorizontalAlignment="Right">Controle</TextBlock>
                     </Grid>
                     <ListBox Name="ViewerListBox" Height="90" Items="{Binding Viewers}" SelectionMode="Multiple">
                         <ListBox.ItemTemplate>
@@ -85,7 +85,7 @@
               >
         <Button.ContextMenu>
           <ContextMenu>
-            <MenuItem Header="Change Server" Command="{Binding ChangeServerCommand}"></MenuItem>
+            <MenuItem Header="Congigurar Servidor" Command="{Binding ChangeServerCommand}"></MenuItem>
           </ContextMenu>
         </Button.ContextMenu>
         <Image Source="avares://Remotely_Desktop/Assets/Gear.png"></Image>

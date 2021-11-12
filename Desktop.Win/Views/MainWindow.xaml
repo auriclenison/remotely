@@ -106,10 +106,10 @@
                 Click="OptionsButton_Click">
             <Button.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Change Server" Command="{Binding Path=ChangeServerCommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}"></MenuItem>
+                    <MenuItem Header="Configurar Servidor" Command="{Binding Path=ChangeServerCommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}"></MenuItem>
 
-                    <MenuItem Header="Elevate to Admin" Command="{Binding Path=ElevateToAdminCommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}"></MenuItem>
-                    <MenuItem Header="Elevate to Service" Command="{Binding Path=ElevateToServiceCommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}"></MenuItem>
+                    <MenuItem Header="Executar como Admin" Command="{Binding Path=ElevateToAdminCommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}"></MenuItem>
+                    <MenuItem Header="Executar como Serviço" Command="{Binding Path=ElevateToServiceCommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}"></MenuItem>
                 </ContextMenu>
             </Button.ContextMenu>
             <Rectangle Fill="{StaticResource GearBrush}"></Rectangle>
