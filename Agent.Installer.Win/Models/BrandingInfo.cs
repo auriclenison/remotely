@@ -8,15 +8,15 @@ namespace Remotely.Agent.Installer.Win.Models
 {
     public class BrandingInfo
     {
-        public string Product { get; set; } = "Remotely";
+        public string Product { get; set; } = "Logicom Remoto";
 
         public string Icon { get; set; }
 
-        public byte TitleForegroundRed { get; set; } = 29;
+        public byte TitleForegroundRed { get; set; } = 251;
 
-        public byte TitleForegroundGreen { get; set; } = 144;
+        public byte TitleForegroundGreen { get; set; } = 134;
 
-        public byte TitleForegroundBlue { get; set; } = 241;
+        public byte TitleForegroundBlue { get; set; } = 4;
 
         public byte TitleBackgroundRed { get; set; } = 70;
 

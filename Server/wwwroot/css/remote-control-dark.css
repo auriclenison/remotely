@@ -69,7 +69,7 @@ button[disabled] {
 
 
 .logo-subtitle {
-    color: deepskyblue;
+    color: darkorange;
 }
 
 .logo-title {
@@ -78,13 +78,13 @@ button[disabled] {
 
 
 footer a {
-    color: deepskyblue;
+    color: darkorange;
 }
 
 
 
 .status-message {
-    color: deepskyblue;
+    color: darkorange;
 }
 
 .toast-message {

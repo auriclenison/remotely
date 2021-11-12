@@ -11,10 +11,10 @@
             }
             else
             {
-                <span>Remotely</span>
+                <span>Logicom Remoto</span>
             }
         </div>
-        <div class="logo-subtitle">Support Portal</div>
+        <div class="logo-subtitle">Portal de Suporte</div>
     </a>
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
@@ -25,13 +25,13 @@
     <ul class="nav flex-column">
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
+                <span class="oi oi-home" aria-hidden="true"></span> Principal
             </NavLink>
         </li>
 
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="/RemoteControl" target="_blank">
-                <span class="oi oi-monitor" aria-hidden="true"></span> Remote Control
+                <span class="oi oi-monitor" aria-hidden="true"></span> Controle Remoto
             </NavLink>
 
         </li>
@@ -50,12 +50,12 @@
                 </li>
                 <li class="nav-item px-3">
                     <NavLink class="nav-link" href="device-details">
-                        <span class="oi oi-info" aria-hidden="true"></span> Device Details
+                        <span class="oi oi-info" aria-hidden="true"></span> Detalhes do Dispositivo
                     </NavLink>
                 </li>
                 <li class="nav-item px-3">
                     <NavLink class="nav-link" href="user-options">
-                        <span class="oi oi-pencil" aria-hidden="true"></span> User Options
+                        <span class="oi oi-pencil" aria-hidden="true"></span> Opções do Usuário
                     </NavLink>
                 </li>
 
@@ -70,12 +70,12 @@
 
             <li class="nav-item px-3">
                 <NavLink class="nav-link" href="manage-organization">
-                    <span class="oi oi-briefcase" aria-hidden="true"></span> Organization
+                    <span class="oi oi-briefcase" aria-hidden="true"></span> Organizacao
                 </NavLink>
             </li>
             <li class="nav-item px-3">
                 <NavLink class="nav-link" href="branding">
-                    <span class="oi oi-brush" aria-hidden="true"></span> Branding
+                    <span class="oi oi-brush" aria-hidden="true"></span> Customização
                 </NavLink>
             </li>
             <li class="nav-item px-3">
@@ -85,7 +85,7 @@
             </li>
             <li class="nav-item px-3">
                 <NavLink class="nav-link" href="server-logs">
-                    <span class="oi oi-document" aria-hidden="true"></span> Server Logs
+                    <span class="oi oi-document" aria-hidden="true"></span> Servidor Logs
                 </NavLink>
             </li>
 
@@ -93,7 +93,7 @@
             {
                 <li class="nav-item px-3">
                     <NavLink class="nav-link" href="server-config">
-                        <span class="oi oi-wrench" aria-hidden="true"></span> Server Config
+                        <span class="oi oi-wrench" aria-hidden="true"></span> Servidor Config
                     </NavLink>
                 </li>
             }
@@ -103,30 +103,30 @@
             <Authorized>
                 <li class="px-3 mt-3">
                     <a class="btn btn-link text-light" href="Identity/Account/Manage">
-                        Account
+                        Ações
                     </a>
                 </li>
                 <li class="px-3">
                     <form method="post" action="Identity/Account/LogOut">
-                        <button type="submit" class="btn btn-link text-light">Log out</button>
+                        <button type="submit" class="btn btn-link text-light">Sair</button>
                     </form>
                 </li>
             </Authorized>
             <NotAuthorized>
                 <li class="px-3">
-                    <a class="btn btn-link text-light" href="Identity/Account/Login">Log in</a>
+                    <a class="btn btn-link text-light" href="Identity/Account/Login">Entrar</a>
                 </li>
                 @if (AppConfig.MaxOrganizationCount < 0 || DataService.GetOrganizationCount() < AppConfig.MaxOrganizationCount)
                 {
                     <li class="px-3 mt-3">
-                        <a class="btn btn-link text-light" href="Identity/Account/Register">Register</a>
+                        <a class="btn btn-link text-light" href="Identity/Account/Register">Registrar</a>
                     </li>
                 }
             </NotAuthorized>
         </AuthorizeView>
 
         <li class="px-3 mt-3">
-            <a class="btn btn-link text-light" href="/about">About</a>
+            <a class="btn btn-link text-light" href="/about">Sobre</a>
         </li>
     </ul>
 </div>

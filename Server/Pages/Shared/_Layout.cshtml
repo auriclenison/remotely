@@ -8,7 +8,7 @@
 @inject IDataService DataService
 
 @{
-    var organizationName = "Remotely";
+    var organizationName = "Logicom";
     var user = DataService.GetUserByNameWithOrg(User?.Identity?.Name);
 
     if (user is null)
@@ -31,10 +31,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=550, user-scalable=no" />
-    <title>@ViewData["Title"] - Remotely</title>
+    <title>@ViewData["Title"] - Logicom Remoto</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="description" content="Remote access tools designed to get things done quickly." />
+    <meta name="description" content="Acesso Remoto Para Suporte ao Cliente" />
     <link href="~/manifest.json" rel="manifest" />
     <link rel="stylesheet" href="~/Identity/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Identity/css/site.css" />
@@ -79,7 +79,7 @@
                     <div>
                         @organizationName
                     </div>
-                    <div class="logo-subtitle">Support Portal</div>
+                    <div class="logo-subtitle">Portal de Suporte</div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -111,7 +111,7 @@
     </div>
     <footer class="footer border-top text-muted mt-4">
         <div class="container">
-            &copy; @DateTimeOffset.Now.Year - <a href="https://lucency.co">Translucency Software</a>
+            &copy; @DateTimeOffset.Now.Year - <a href="http://www.logicom.com.br">Logicom Tecnologia</a>
         </div>
     </footer>
     <script src="~/Identity/lib/jquery/dist/jquery.min.js"></script>

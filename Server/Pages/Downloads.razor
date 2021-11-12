@@ -10,9 +10,9 @@
 @inject ILogger<Downloads> Logger 
 
 <div class="row mb-3">
-    <h4>Portable Instant Support Clients</h4>
+    <h4>Aplicativo para Suporte ao Cliente</h4>
     <div class="text-info col-sm-12 pl-0 mb-2">
-        Instant desktop sharing.  No account required.
+        Compartilhamento instantâneo da área de trabalho. Nenhuma conta necessária.
     </div>
     <div class="col-sm-6 mb-3">
         <strong>Windows (64-Bit)</strong>
@@ -46,7 +46,7 @@
 
 
 <div class="row mb-3">
-    <h4>Installable Instant Support Clients</h4>
+    <h4>Clientes de suporte instantâneo instaláveis</h4>
     <div class="text-info col-sm-12 pl-0 mb-2">
         Light-weight, self-updating quick support clients.
     </div>
@@ -54,7 +54,7 @@
     @if (!_isServerUrlEmbedded)
     {
         <div class="col-sm-12">
-            <AlertBanner Message="Must be built from source to target specific server URL." StatusClass="warning" />
+            <AlertBanner Message="Deve ser Configurado a URL do servidor específico de destino." StatusClass="warning" />
         </div>
     }
 
@@ -83,13 +83,13 @@
 <div class="row">
     <h4>Resident Agents</h4>
     <div class="text-info col-sm-12 pl-0 mb-2">
-        Installable background agents that provide unattended access and remote scripting.
+        Agentes instaláveis ​​em segundo plano que fornecem acesso autônomo e scripts remotos.
     </div>
 
     @if (!_isAuthenticated)
     {
         <div class="col-sm-6 mb-3">
-            <h6>Must be logged in to download.</h6>
+            <h6>Deve estar logado para fazer o download.</h6>
         </div>
 
     }

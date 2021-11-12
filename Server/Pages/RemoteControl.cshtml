@@ -13,11 +13,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no" />
     <link rel="icon" href="~/favicon.ico" />
-    <title>Remotely Remote Control</title>
+    <title>Logicom Remoto</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <link href="~/manifest-rc.json" rel="manifest" />
-    <meta name="description" content="Remote support tools designed to get things done quickly." />
+    <meta name="description" content="Controle Remoto Para Suporte a Cliente." />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link href="~/css/remote-control.css" rel="stylesheet" asp-append-version="true" />
     @if (AppConfig.Theme == Remotely.Shared.Enums.Theme.Light)
@@ -70,11 +70,11 @@
     </environment>
 </head>
 <body>
-    <div class="remotely-header" title="Remotely">
+    <div class="remotely-header" title="Logicom Remoto">
         <div class="logo-title">
-            Remotely
+            Logicom Remoto
         </div>
-        <div class="logo-subtitle">Support Portal</div>
+        <div class="logo-subtitle">Portal de Suporte</div>
     </div>
 
     <button id="keyboardButton" hidden="hidden" title="Invoke the mobile touch keyboard.">
@@ -89,94 +89,94 @@
     <div id="menuFrame">
 
         <div class="menu-options-header">
-            Actions
+            Opções
         </div>
 
         <div>
-            <button id="viewOnlyButton" class="option-button" title="If toggled, prevents sending commnads and input to the remote computer.">
-                View Only <i class="fas fa-eye"></i>
+            <button id="viewOnlyButton" class="option-button" title="Se alternado, evita o envio de comunicações e entrada para o computador remoto.">
+                Apenas Espiar <i class="fas fa-eye"></i>
             </button>
 
-            <button id="clipboardTransferButton" class="option-button" title="Type the current clipboard text on the remote computer.">
-                Clipboard  <i class="fas fa-clipboard"></i>
+            <button id="clipboardTransferButton" class="option-button" title="Digite o texto da área de transferência atual no computador remoto.">
+                Area de Transferência  <i class="fas fa-clipboard"></i>
             </button>
 
-            <button id="blockInputButton" class="option-button" title="Prevent remote user from using keyboard and mouse.">
-                Block Remote Input <i class="fas fa-mouse"></i>
+            <button id="blockInputButton" class="option-button" title="mpedir que o usuário remoto use o teclado e o mouse.">
+                Bloquear Usuário <i class="fas fa-mouse"></i>
             </button>
 
-            <button id="inviteButton" class="option-button" title="Copy a link that lets another person view the remote screen.">
-                Invite Others  <i class="fas fa-user-plus"></i>
+            <button id="inviteButton" class="option-button" title="Copie um link que permite que outra pessoa veja a tela remota.">
+                Convidar Outros  <i class="fas fa-user-plus"></i>
             </button>
 
-            <button id="audioButton" class="option-button" title="Windows only.  Stream the remote audio to the browser.">
+            <button id="audioButton" class="option-button" title="Apenas Windows. Transmita o áudio remoto para o navegador.">
                 Audio <i class="fas fa-volume-up"></i>
             </button>
 
-            <button id="fileTransferButton" class="option-button" title="Transfer files to the remote computer.">
-                File Transfer  <i class="fas fa-file-upload"></i>
+            <button id="fileTransferButton" class="option-button" title="Transfira arquivos para o computador remoto.">
+                Transferir Arquivo  <i class="fas fa-file-upload"></i>
             </button>
 
-            <button id="ctrlAltDelButton" class="option-button" title="Simulate the Ctrl+Alt+Del command on the remote computer.">
+            <button id="ctrlAltDelButton" class="option-button" title="Envie o Comando Ctrl+Alt+Del par o Computador Remoto.">
                 Ctrl+Alt+Del <i class="fas fa-sign-in-alt"></i>
             </button>
 
-            <button id="disconnectButton" class="option-button" title="Disconnect from the current session.">
-                Disconnect <i class="fas fa-window-close"></i>
+            <button id="disconnectButton" class="option-button" title="Desconectar da Sessão Atual">
+                Desconectar <i class="fas fa-window-close"></i>
             </button>
         </div>
 
 
         <div class="menu-options-header">
-            View
+            Visualizar
         </div>
 
         <div>
-            <button id="streamVideoButton" class="option-button" hidden title="Reduce bandwidth and increase FPS, but increase input delay.">
-                Stream Mode <i class="fas fa-video"></i>
+            <button id="streamVideoButton" class="option-button" hidden title="Reduza a largura de banda e aumente o FPS, mas aumente o atraso de entrada.">
+                Modo de transmissão <i class="fas fa-video"></i>
             </button>
 
-            <button id="changeScreenButton" class="option-button" title="Switch monitors on remote multi-monitor setups.">
-                Monitors <i class="fas fa-desktop"></i>
+            <button id="changeScreenButton" class="option-button" title="Alterne monitores em configurações remotas de vários monitores.">
+                Monitores <i class="fas fa-desktop"></i>
             </button>
 
-            <button id="fullScreenButton" class="option-button" title="Enter fullscreen mode.">
-                Fullscreen <i class="fas fa-window-maximize"></i>
+            <button id="fullScreenButton" class="option-button" title="Entre no modo de tela Cheia.">
+                Tela Cheia <i class="fas fa-window-maximize"></i>
             </button>
 
 
-            <button id="fitToScreenButton" class="toggled option-button" title="If toggled, will resize image to fit in the window.">
-                Fit <i class="fas fa-expand"></i>
+            <button id="fitToScreenButton" class="toggled option-button" title="Se alternado, irá redimensionar a imagem para caber na janela.">
+                Ajustar <i class="fas fa-expand"></i>
             </button>
         </div>
 
 
         <div class="menu-options-header">
-            Recording
+            Gravação
         </div>
 
         <div>
-            <button id="recordSessionButton" class="option-button" title="Record session as a WEBM video in the browser.">
-                Start <i class="fas fa-record-vinyl"></i>
+            <button id="recordSessionButton" class="option-button" title="Grave a sessão como um vídeo WEBM no navegador.">
+                Iniciar <i class="fas fa-record-vinyl"></i>
             </button>
 
-            <button id="downloadRecordingButton" class="option-button" title="Download the recorded session as a WEBM file.">
+            <button id="downloadRecordingButton" class="option-button" title="Baixe a sessão gravada como um arquivo WEBM.">
                 Download <i class="fas fa-download"></i>
             </button>
         </div>
 
         <div class="menu-options-header">
-            Windows Session
+            sessão
         </div>
         <div>
             <select id="windowsSessionSelect"
-                    title="Switch to a different Windows session."
+                    title="Mude para uma sessão diferente do Windows."
                     class="option-button"
                     style="height: 30px; width: 90%; margin: 5px 0;"></select>
         </div>
 
         <div style="margin-top:15px;">
-            <span>Connection: </span>
+            <span>Conexão: </span>
             <i id="connectionRelayedIcon" class="fas fa-wifi connection-icon" title="Connection is relayed"></i>
             <i id="connectionP2PIcon" class="fas fa-wifi connection-icon" title="Connection is peer-to-peer" style="display:none"></i>
         </div>
@@ -189,36 +189,36 @@
 
     <div id="clipboardTransferBar" class="horizontal-button-bar">
         <div style="color:white; font-size:12px">
-            Shared Clipboard
+            Área de transferência compartilhada
         </div>
         <div style="color:white; font-size:12px;">
-            <button id="typeClipboardButton" class="horizontal-bar-button">Type Clipboard</button>
+            <button id="typeClipboardButton" class="horizontal-bar-button">Digite a Area de Transferência</button>
         </div>
     </div>
 
     <div id="fileTransferBar" class="horizontal-button-bar">
         <div style="color:white; font-size:12px">
-            File Transfer
+            Transferir Arquivos
         </div>
         <div style="color:white; font-size:12px;">
-            <button id="fileUploadButton" class="horizontal-bar-button">Upload File</button>
-            <button id="fileDownloadButton" class="horizontal-bar-button">Download File</button>
+            <button id="fileUploadButton" class="horizontal-bar-button">Upload de Arquivo</button>
+            <button id="fileDownloadButton" class="horizontal-bar-button">Download de Arquivo</button>
         </div>
     </div>
     <div id="connectBox" class="center-connection-box" style="display: none">
-        <h3>Connect to a client:</h3>
+        <h3>Conectar ao Cliente:</h3>
         <div class="form-block">
-            <label>Your Name (shown to client): </label>
+            <label>Seu Nome (para Exibir ao Cliente): </label>
             <br />
             <input id="nameInput" type="text" value="@Model.RemotelyUser?.UserOptions?.DisplayName" />
         </div>
         <div class="form-block">
-            <label>Session ID: </label>
+            <label>Código da Sessão: </label>
             <br />
             <input id="sessionIDInput" type="text" pattern="[0-9 ]+" />
         </div>
         <div class="right-aligned">
-            <button id="connectButton">Connect</button>
+            <button id="connectButton">Conectar</button>
         </div>
         <div id="statusMessage" class="status-message">
 
@@ -226,7 +226,7 @@
     </div>
 
     <div id="disconnectedBox" class="center-connection-box" style="text-align: center; display: none;">
-        <h3>Disconnected from client.</h3>
+        <h3>Desconectado do Cliente.</h3>
     </div>
 
 
@@ -249,7 +249,7 @@
 
     <footer>
         <div class="footer-wrapper">
-            &copy; 2021 - <a href="https://lucency.co">Translucency Software</a>
+            &copy; 2021 - <a href="http://www.logicom.com.br">Logicom tecnologia</a>
         </div>
     </footer>
 

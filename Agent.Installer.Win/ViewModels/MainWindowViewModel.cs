@@ -282,9 +282,9 @@ namespace Remotely.Agent.Installer.Win.ViewModels
                     brandingInfo?.TitleBackgroundBlue ?? 70));
 
                 TitleForegroundColor = new SolidColorBrush(Color.FromRgb(
-                   brandingInfo?.TitleForegroundRed ?? 29,
-                   brandingInfo?.TitleForegroundGreen ?? 144,
-                   brandingInfo?.TitleForegroundBlue ?? 241));
+                   brandingInfo?.TitleForegroundRed ?? 251,
+                   brandingInfo?.TitleForegroundGreen ?? 134,
+                   brandingInfo?.TitleForegroundBlue ?? 4));
 
                 TitleButtonForegroundColor = new SolidColorBrush(Color.FromRgb(
                    brandingInfo?.ButtonForegroundRed ?? 255,
