@@ -63,7 +63,8 @@ namespace Remotely.Desktop.XPlat.ViewModels
             InputText = string.Empty;
             await PipeStreamWriter.WriteLineAsync(JsonSerializer.Serialize(chatMessage));
             await PipeStreamWriter.FlushAsync();
-            chatMessage.SenderName = "You";
+            // chatMessage.SenderName = "You";
+            chatMessage.SenderName = "Você";
             ChatMessages.Add(chatMessage);
         }
     }

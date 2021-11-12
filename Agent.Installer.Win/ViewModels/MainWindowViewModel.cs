@@ -25,7 +25,7 @@ namespace Remotely.Agent.Installer.Win.ViewModels
     {
         private BrandingInfo _brandingInfo;
         private bool _createSupportShortcut;
-        private string _headerMessage = "Install the service.";
+        private string _headerMessage = "Instalação do Serviço.";
 
         private bool _isReadyState = true;
         private bool _isServiceInstalled;
@@ -124,7 +124,7 @@ namespace Remotely.Agent.Installer.Win.ViewModels
                     }
                     else
                     {
-                        MessageBoxEx.Show("Log file doesn't exist.", "No Logs", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBoxEx.Show("Aquivo de Log Inexistente.", "Sem Logs", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                 });
             }
@@ -269,7 +269,7 @@ namespace Remotely.Agent.Installer.Win.ViewModels
         {
             try
             {
-                ProductName = "Remotely";
+                ProductName = "Logicom Remoto";
 
                 if (!string.IsNullOrWhiteSpace(brandingInfo?.Product))
                 {
@@ -310,7 +310,7 @@ namespace Remotely.Agent.Installer.Win.ViewModels
             var result = principal.IsInRole(WindowsBuiltInRole.Administrator);
             if (!result)
             {
-                MessageBoxEx.Show("Elevated privileges are required.  Please restart the installer using 'Run as administrator'.", "Elevation Required", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBoxEx.Show("Previlegios de Administrador Requerido.  Por favor Instale como Administrador'.", "Evelação Requerida", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             return result;
         }
@@ -319,15 +319,15 @@ namespace Remotely.Agent.Installer.Win.ViewModels
         {
             if (string.IsNullOrWhiteSpace(OrganizationID) || string.IsNullOrWhiteSpace(ServerUrl))
             {
-                Logger.Write("ServerUrl or OrganizationID param is missing.  Unable to install.");
-                MessageBoxEx.Show("Required settings are missing.  Please enter a server URL and organization ID.", "Invalid Input", MessageBoxButton.OK, MessageBoxImage.Error);
+                Logger.Write("Servidor URL ou Organização ID Fantando.  Obrigatório para Instalação.");
+                MessageBoxEx.Show("Faltam configurações obrigatórias.  Por favor Informe Organização ID e URL.", "Dados Inválidos", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
             if (!Guid.TryParse(OrganizationID, out _))
             {
-                Logger.Write("OrganizationID is not a valid GUID.");
-                MessageBoxEx.Show("Organization ID must be a valid GUID.", "Invalid Organization ID", MessageBoxButton.OK, MessageBoxImage.Error);
+                Logger.Write("Organização não é Válida GUID.");
+                MessageBoxEx.Show("Deve Ser um ID de Organização Válido.", "ID de Organização Inválido", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
@@ -335,7 +335,7 @@ namespace Remotely.Agent.Installer.Win.ViewModels
                 (serverUri.Scheme != Uri.UriSchemeHttp && serverUri.Scheme != Uri.UriSchemeHttps))
             {
                 Logger.Write("ServerUrl is not valid.");
-                MessageBoxEx.Show("Server URL must be a valid Uri (e.g. https://app.remotely.one).", "Invalid Server URL", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBoxEx.Show("Servidor URL deve ser Válido (Ex. https://acessoremoto.com.br).", "Servidor URL Inválido", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
@@ -470,20 +470,20 @@ namespace Remotely.Agent.Installer.Win.ViewModels
                     return;
                 }
 
-                HeaderMessage = "Installing Remotely...";
+                HeaderMessage = "Instalando Logicom Remoto...";
 
                 if (await Installer.Install(ServerUrl, OrganizationID, DeviceGroup, DeviceAlias, DeviceUuid, CreateSupportShortcut))
                 {
                     IsServiceInstalled = true;
                     Progress = 0;
-                    HeaderMessage = "Installation completed.";
-                    StatusMessage = "Remotely has been installed.  You can now close this window.";
+                    HeaderMessage = "Instalação completa.";
+                    StatusMessage = "Logicom Remoto Instalado.  Você já Pode Fechar a Janela.";
                 }
                 else
                 {
                     Progress = 0;
-                    HeaderMessage = "An error occurred during installation.";
-                    StatusMessage = "There was an error during installation.  Check the logs for details.";
+                    HeaderMessage = "Erro Ocorrido Durante a Instalação.";
+                    StatusMessage = "Erros Ocorridos Durante a Instalação.  Olhe nos logs para Mais Detalhes.";
                 }
                 if (!CheckIsAdministrator())
                 {
@@ -506,20 +506,20 @@ namespace Remotely.Agent.Installer.Win.ViewModels
             {
                 IsReadyState = false;
 
-                HeaderMessage = "Uninstalling Remotely...";
+                HeaderMessage = "Desinstalando o Logicom Remoto...";
 
                 if (await Installer.Uninstall())
                 {
                     IsServiceInstalled = false;
                     Progress = 0;
-                    HeaderMessage = "Uninstall completed.";
-                    StatusMessage = "Remotely has been uninstalled.  You can now close this window.";
+                    HeaderMessage = "Desinstalação completa.";
+                    StatusMessage = "Logicom Remoto Desinstalado.  Você já Pode Fechar a Janela.";
                 }
                 else
                 {
                     Progress = 0;
-                    HeaderMessage = "An error occurred during uninstall.";
-                    StatusMessage = "There was an error during uninstall.  Check the logs for details.";
+                    HeaderMessage = "Erro Ocorrido Durante a Desinstalação.";
+                    StatusMessage = "Erros Ocorridos Durante a Desinstalação.  Olhe nos logs para Mais Detalhes.";
                 }
 
             }

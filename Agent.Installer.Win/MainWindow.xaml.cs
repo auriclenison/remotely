@@ -46,8 +46,7 @@ namespace Remotely.Agent.Installer.Win
         private void ShowServerUrlHelp(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(
-                "This is the URL of the Remotely server that you're hosting.  The device will connect to this URL.", 
-                "Server URL", 
+                "Adicione Aqui a Url de Acesso Remoto do Servidor ex: https:\\acessoremotologicom.com.br","Site de Acesso Remoto", 
                 MessageBoxButton.OK, 
                 MessageBoxImage.Information);
         }
@@ -55,18 +54,15 @@ namespace Remotely.Agent.Installer.Win
         private void ShowOrganizationIdHelp(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(
-                "This is your organization ID on the Remotely server.  Since Remotely supports multi-tenancy, " +
-                "this ID needs to be provided to determine who should have access." 
-                + Environment.NewLine + Environment.NewLine +
-                "You can find this ID on the Organization tab on the web app.", 
-                "Organization ID", 
+                "Adicione aqui a id da Organização Copie a informação do Site na opção Organização", 
+                "Organização ID", 
                 MessageBoxButton.OK, 
                 MessageBoxImage.Information);
         }
         private void ShowSupportShortcutHelp(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("If selected, the installer will create a desktop shortcut to the Get Support page for this device.", 
-                "Support Shortcut",
+            MessageBox.Show("Se selecionado, o instalador criará um atalho na área de trabalho para a página Obter suporte para este dispositivo.", 
+                "Criar Atalho",
                 MessageBoxButton.OK,
                 MessageBoxImage.Information);
         }

@@ -37,7 +37,7 @@ namespace Remotely.Agent.Installer.Win.Services
         {
             try
             {
-                Logger.Write("Install started.");
+                Logger.Write("Instalação Iniciada");
                 if (!CheckIsAdministrator())
                 {
                     return false;
@@ -260,7 +260,7 @@ namespace Remotely.Agent.Installer.Win.Services
             }
             else
             {
-                ProgressMessageChanged.Invoke(this, "Downloading Remotely agent.");
+                ProgressMessageChanged.Invoke(this, "Baixando Logicom Remoto agent.");
                 using (var client = new WebClient())
                 {
                     client.DownloadProgressChanged += (sender, args) =>
@@ -272,7 +272,7 @@ namespace Remotely.Agent.Installer.Win.Services
                 }
             }
 
-            ProgressMessageChanged.Invoke(this, "Extracting Remotely files.");
+            ProgressMessageChanged.Invoke(this, "Extraindo Arquivos Logicom Remoto.");
             ProgressValueChanged?.Invoke(this, 0);
 
             var tempDir = Path.Combine(Path.GetTempPath(), "RemotelyUpdate");
@@ -366,7 +366,7 @@ namespace Remotely.Agent.Installer.Win.Services
         private void InstallService()
         {
             Logger.Write("Installing service.");
-            ProgressMessageChanged?.Invoke(this, "Installing Remotely service.");
+            ProgressMessageChanged?.Invoke(this, "Instalando Logicom Remoto service.");
             var serv = ServiceController.GetServices().FirstOrDefault(ser => ser.ServiceName == "Remotely_Service");
             if (serv == null)
             {
@@ -385,7 +385,7 @@ namespace Remotely.Agent.Installer.Win.Services
 
                 var state = new System.Collections.Specialized.ListDictionary();
                 serviceInstaller.Install(state);
-                Logger.Write("Service installed.");
+                Logger.Write("Serviço Instalado.");
                 serv = ServiceController.GetServices().FirstOrDefault(ser => ser.ServiceName == "Remotely_Service");
 
                 ProcessEx.StartHidden("cmd.exe", "/c sc.exe failure \"Remotely_Service\" reset= 5 actions= restart/5000");
@@ -394,7 +394,7 @@ namespace Remotely.Agent.Installer.Win.Services
             {
                 serv.Start();
             }
-            Logger.Write("Service started.");
+            Logger.Write("Serviço Iniciado.");
         }
 
         private void RestoreBackup()
@@ -404,7 +404,7 @@ namespace Remotely.Agent.Installer.Win.Services
                 var backupPath = Path.Combine(Path.GetTempPath(), "Remotely_Backup.zip");
                 if (FileIO.Exists(backupPath))
                 {
-                    Logger.Write("Restoring backup.");
+                    Logger.Write("Restaurando backup.");
                     ClearInstallDirectory();
                     ZipFile.ExtractToDirectory(backupPath, InstallPath);
                     var serv = ServiceController.GetServices().FirstOrDefault(ser => ser.ServiceName == "Remotely_Service");
@@ -422,7 +422,7 @@ namespace Remotely.Agent.Installer.Win.Services
 
         private async Task StopProcesses()
         {
-            ProgressMessageChanged?.Invoke(this, "Stopping Remotely processes.");
+            ProgressMessageChanged?.Invoke(this, "Parando Processo do Logicom Remoto.");
             var procs = Process.GetProcessesByName("Remotely_Agent").Concat(Process.GetProcessesByName("Remotely_Desktop"));
 
             foreach (var proc in procs)
@@ -439,8 +439,8 @@ namespace Remotely.Agent.Installer.Win.Services
                 var remotelyService = ServiceController.GetServices().FirstOrDefault(x => x.ServiceName == "Remotely_Service");
                 if (remotelyService != null)
                 {
-                    Logger.Write("Stopping existing Remotely service.");
-                    ProgressMessageChanged?.Invoke(this, "Stopping existing Remotely service.");
+                    Logger.Write("Parando o Processo Existente.");
+                    ProgressMessageChanged?.Invoke(this, "Parando o Serviço Existente.");
                     remotelyService.Stop();
                     remotelyService.WaitForStatus(ServiceControllerStatus.Stopped);
                 }

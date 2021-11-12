@@ -30,9 +30,10 @@
             <DockPanel Margin="10,0,0,0">
                 <DockPanel>
                     <Image Height="50" Width="50"  Margin="0,0,10,0" Source="{Binding Icon}"></Image>
-                    <TextBlock Foreground="{Binding TitleForegroundColor}" FontWeight="Bold" FontSize="20" VerticalAlignment="Center">
-                        <Run Text="{Binding ProductName}"></Run>
-                        <Run Text="Installer"></Run>
+                    <!--TextBlock Foreground="{Binding TitleForegroundColor}" FontWeight="Bold" FontSize="20" VerticalAlignment="Center"-->
+                    <TextBlock Foreground="Orange" FontWeight="Bold" FontSize="20" VerticalAlignment="Center">
+                    <!--Run Text="{Binding ProductName}"></Run-->                
+                        <Run Text="Instalador Logicom Remoto"></Run>
                     </TextBlock>
                 </DockPanel>
                 <Button Style="{StaticResource TitlebarButton}" Click="CloseButton_Click" Content="X" Foreground="{Binding TitleButtonForegroundColor}" Background="{Binding TitleBackgroundColor}" />
@@ -42,7 +43,8 @@
         <Grid Grid.Row="1" Margin="10,15,10,0">
 
             <StackPanel>
-                <TextBlock Style="{StaticResource SectionHeader}" Text="{Binding HeaderMessage}" Margin="0,0,0,10"></TextBlock>
+                <!--TextBlock Style="{StaticResource SectionHeader}" Text="{Binding HeaderMessage}" Margin="0,0,0,10"></TextBlock-->
+                <TextBlock Style="{StaticResource SectionHeader}" Text="Configuração do Servidor" Margin="0,0,0,10"></TextBlock>
                 <Grid Margin="25,5,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -57,7 +59,7 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0">
-                        <TextBlock FontSize="14">Server URL:</TextBlock>
+                        <TextBlock FontSize="14">Servidor URL:</TextBlock>
                         
                         <Button Grid.Column="1" Grid.Row="0" 
                                 Background="White"
@@ -78,7 +80,7 @@
                     <TextBox Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" Text="{Binding ServerUrl}" FontSize="14" />
 
                     <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="2">
-                        <TextBlock FontSize="14">Organization ID</TextBlock>
+                        <TextBlock FontSize="14">Organização ID</TextBlock>
 
                         <Button Grid.Column="1" Grid.Row="0" 
                                 Background="White"
@@ -97,7 +99,7 @@
                     <TextBox  Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="{Binding OrganizationID}" FontSize="14" />
 
                     <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="4">
-                        <TextBlock FontSize="14">Support Shortcut</TextBlock>
+                        <TextBlock FontSize="14">Atalho para Suporte</TextBlock>
 
                         <Button Grid.Column="1" Grid.Row="0" 
                                 Background="White"
@@ -136,7 +138,7 @@
                     Style="{StaticResource NormalButton}" 
                     Margin="5,0,0,0"
                     Click="CloseButton_Click">
-                Close
+                Fechar
             </Button>
             <Button DockPanel.Dock="Right" 
                     HorizontalAlignment="Right"
@@ -145,12 +147,12 @@
                     IsEnabled="{Binding IsReadyState}"
                     Visibility="{Binding IsServiceInstalled, Converter={StaticResource BooleanToVisibilityConverter}}"
                     Command="{Binding UninstallCommand}">
-                Uninstall
+                Desinstalar
             </Button>
             <Button DockPanel.Dock="Right" 
                     HorizontalAlignment="Right" 
                     Style="{StaticResource NormalButton}" 
-                    Content="{Binding InstallButtonText}"
+                    Content="Instalar"
                     Margin="5,0,0,0"
                     IsEnabled="{Binding IsReadyState}"
                     Command="{Binding InstallCommand}">
