@@ -1,0 +1,9 @@
+﻿{
+  "agentId": 21,
+  "agentName": "auriclenison",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelines.actions.githubusercontent.com/cbTQ8JxMgcnrlfIuBeOsCeGeQsTfgIPAI4qp91Ay4rPK9iSq9W",
+  "gitHubUrl": "https://github.com/auriclenison/remotely",
+  "workFolder": "runs-on: self-hosted"
+}
